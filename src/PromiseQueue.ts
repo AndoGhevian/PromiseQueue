@@ -1,7 +1,7 @@
 import { wait } from './utils'
 
 
-interface QueueMeta {
+export interface QueueMeta {
     maxLength: number
     timer: number
 
