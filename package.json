@@ -1,6 +1,6 @@
 {
   "name": "@ando_ghevian/promise-queue",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Queue promises with timer",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
