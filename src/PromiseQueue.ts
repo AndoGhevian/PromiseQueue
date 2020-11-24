@@ -63,10 +63,12 @@ export default class PromiseQueue {
     }
 
     async addPromise<T>(promise: Promise<T>, cb?: (promise: Promise<T>, queueMeta: QueueMeta) => void) {
+        let lastTimer
         while (this.queue.length >= this.maxLength) {
-            if (!this._timer) {
+            if (!this._timer || this._timer && lastTimer === this._timer) {
                 this._timer = wait(this.timer)
             }
+            lastTimer = this._timer
             await this._timer
         }
 
